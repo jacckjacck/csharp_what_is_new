@@ -14,11 +14,12 @@ namespace CSHARP_WHAT_IS_NEW
 
             /*
              *  NEW WAY
-             *  it's possible to return multiple values from a method
+             *  it's possible to return multiple values from a method, if you don't need some of the returned value it can be discarded 
+             *  by using the underscore symbol helping with the memory storage improvement
              */
 
-            (string WeekDay, int Year) = GetCurrentWeekDayAndYear();
-            Console.WriteLine($"Weekday is {WeekDay} and year is {Year}");
+            (string WeekDay, _) = GetCurrentWeekDayAndYear();
+            Console.WriteLine($"Weekday is {WeekDay} ");
         }
 
         public static (string day, int year) GetCurrentWeekDayAndYear()
