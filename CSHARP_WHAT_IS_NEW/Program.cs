@@ -17,8 +17,10 @@ namespace CSHARP_WHAT_IS_NEW
              *  it's possible to return multiple values from a method
              */
 
-            (string WeekDay, int Year) = GetCurrentWeekDayAndYear();
-            Console.WriteLine($"Weekday is {WeekDay} and year is {Year}");
+            //(string WeekDay, int Year) = GetCurrentWeekDayAndYear();
+            //Console.WriteLine($"Weekday is {WeekDay} and year is {Year}");
+            (string WeekDay, int Year) DayAndYear= GetCurrentWeekDayAndYear();
+            Console.WriteLine($"Weekday is {DayAndYear.WeekDay} and year is {DayAndYear.Year}");
         }
 
         public static (string day, int year) GetCurrentWeekDayAndYear()
