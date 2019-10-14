@@ -8,23 +8,22 @@ namespace CSHARP_WHAT_IS_NEW
         {
 
             /*
-             * OLD WAY}
-             * it's necessary to declare a variable 
+             * OLD WAY
+             * to return multiple values from a method was necessary to create an object or something similar
              */
-            //AddDayToCurrentDate(out date);
 
             /*
              *  NEW WAY
-             *  it's possible to declare the out variable in the same instruction 
+             *  it's possible to return multiple values from a method
              */
-            AddDayToCurrentDate(out DateTime date);
 
-            Console.WriteLine($"New Date is {date}");
+            (string WeekDay, int Year) = GetCurrentWeekDayAndYear();
+            Console.WriteLine($"Weekday is {WeekDay} and year is {Year}");
         }
 
-        public static void AddDayToCurrentDate(out DateTime date)
+        public static (string day, int year) GetCurrentWeekDayAndYear()
         {
-            date = DateTime.Now.AddDays(1);
+            return (DateTime.Now.DayOfWeek.ToString(), DateTime.Now.Year);
         }
     }
 }
