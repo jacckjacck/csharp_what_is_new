@@ -6,7 +6,13 @@ namespace CSHARP_WHAT_IS_NEW
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ExpressionBodied expressionBodied = new ExpressionBodied("Jhon", "Doe");
+
+            Console.WriteLine($"{expressionBodied.FullName}");
+            
+            
+            //Other way
+            //Console.WriteLine($"{new ExpressionBodied("Jhon", "Doe").FullName}");
         }
     }
 }
